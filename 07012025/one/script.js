@@ -6,31 +6,31 @@ let isDown = false;
 let timeout;
 
 button.addEventListener("contextmenu", (event) => {
-    event.preventDefault();
+  event.preventDefault();
 
-    if (count > 0) {
-        count -= 1;
-        counter.textContent = count;
-    }
+  if (count > 0) {
+    count -= 1;
+    counter.textContent = count;
+  }
 });
 
 button.addEventListener("mousedown", () => {
-    isDown = false;
-    timeout = setTimeout(() => {
-        isDown = true;
-    }, 1000);
+  isDown = false;
+  timeout = setTimeout(() => {
+    isDown = true;
+  }, 1000);
 });
 
 button.addEventListener("mouseup", () => {
-    clearTimeout(timeout);
+  clearTimeout(timeout);
 
-    if (isDown) {
-        count = 0;
-        counter.textContent = count;
-    } else {
-        if (count < 20) {
-            count += 1;
-            counter.textContent = count;
-        }
+  if (isDown) {
+    count = 0;
+    counter.textContent = count;
+  } else {
+    if (count < 20) {
+      count += 1;
+      counter.textContent = count;
     }
+  }
 });

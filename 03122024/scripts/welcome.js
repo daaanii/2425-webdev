@@ -14,4 +14,3 @@ while (i < 3) {
   alert("Numero: " + i);
   i++;
 }
-
